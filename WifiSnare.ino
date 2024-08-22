@@ -190,6 +190,7 @@ void blinkLED(int times) {
         digitalWrite(ledPin, LOW);
         delay(500);
     }
+    digitalWrite(ledPin, HIGH);
 }
 
 void setup() {
