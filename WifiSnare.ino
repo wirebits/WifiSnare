@@ -204,7 +204,7 @@ void setup() {
     webServer.on("/", handleIndex);
     webServer.on("/attack", handleStartAttack);
     webServer.on("/validate", handleValidation);
-	webServer.onNotFound(handleIndex);
+    webServer.onNotFound(handleIndex);
     webServer.begin();
 }
 
