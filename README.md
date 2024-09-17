@@ -38,7 +38,7 @@ It capture 2.4GHz wifi passwords using Evil-Twin attack.
 6. It is generally `NodeMCU 1.0 (ESP-12E Module)`.
 7. Select the port number of that board.
 8. Upload the code.
-9. After 1-2 minutes, an Access Point is created named `WifiSnare` whose password is `wifisnare`.
+9. After 1-2 minutes, an Access Point is created named `WiFiSnare` whose password is `wifisnare`.
 10. Connect to it.
 11. After few seconds, a page automatically opens where ask to enter the exact SSID name to start attack on it.
 12. Click on `Start Capture` button.
