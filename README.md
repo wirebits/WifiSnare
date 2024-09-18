@@ -31,7 +31,7 @@ It capture 2.4GHz WiFi passwords using Evil-Twin attack.
 10. Restart the Arduino IDE.
 11. Done!
 
-# Install and Run
+# Install
 ## Via Arduino IDE
 1. Download or Clone the Repository.
 2. Open the folder and just double click on `WifiSnare.ino` file.
@@ -41,19 +41,6 @@ It capture 2.4GHz WiFi passwords using Evil-Twin attack.
    - It is generally `NodeMCU 1.0 (ESP-12E Module)`.
 6. Select the correct port number of that board.
 7. Upload the code.
-8. After 1-2 minutes, an Access Point is created named `WiFiSnare` whose password is `wifisnare`.
-9. Connect to it.
-10. After few seconds, a page automatically opens where ask to enter the exact SSID name to start attack on it.
-11. Click on `Start Capture` button.
-12. After that, it disconnects the access point and as well as an open access point created with the same SSID name.
-13. Connect to that open WiFi.
-14. It show a page where it ask for password.
-15. Enter the password and click on `Sign Up` button.
-    - If password is wrong, then led of the board blink `2` times and back to the password page to enter password again.
-    - If password is right, then led of the board blink `3` times and after `2` seconds it close that open access point and restart the `WiFiSnare` access point.
-16. Connnct again to that `WiFiSnare` access point.
-17. At the bottom, it shows the password of that SSID and a download button to save the password to the Phone/PC/Laptop in a `.txt` file.
-18. Also, to attack on some other SSID, type the exact name and click on `Start Capture` button.
 ## Via ESP8266 Flasher
 1. Download the NodeMCU ESP8266 Flasher from [here](https://github.com/nodemcu/nodemcu-flasher) according to your operating system.
 2. Download the `.bin` file from [here](https://github.com/wirebits/WifiSnare/releases/download/v1.0/WifiSnare.bin).
@@ -67,3 +54,17 @@ It capture 2.4GHz WiFi passwords using Evil-Twin attack.
 9. Click on `Operation` Tab.
 10. Click on `Flash(F)` button.
 12. Wait for sometimes and when completed, press `RST` button.
+# Run the Script
+1. After uploading wait 1-2 minutes and after that an Access Point is created named `WiFiSnare` whose password is `wifisnare`.
+2. Connect to it.
+3. After few seconds, a page automatically opens where ask to enter the exact SSID name to start attack on it.
+4. Click on `Start Capture` button.
+5. After that, it disconnects the access point and as well as an open access point created with the same SSID name.
+6. Connect to that open WiFi.
+7. It show a page where it ask for password.
+8. Enter the password and click on `Sign Up` button.
+    - If password is wrong, then led of the board blink `2` times and back to the password page to enter password again.
+    - If password is right, then led of the board blink `3` times and after `2` seconds it close that open access point and restart the `WiFiSnare` access point.
+9. Connnct again to that `WiFiSnare` access point.
+10. At the bottom, it shows the password of that SSID and a download button to save the password to the Phone/PC/Laptop in a `.txt` file.
+11. Also, to attack on some other SSID, type the exact name and click on `Start Capture` button.
