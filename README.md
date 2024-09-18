@@ -54,3 +54,16 @@ It capture 2.4GHz WiFi passwords using Evil-Twin attack.
 16. Connnct again to that `WiFiSnare` access point.
 17. At the bottom, it shows the password of that SSID and a download button to save the password to the Phone/PC/Laptop in a `.txt` file.
 18. Also, to attack on some other SSID, type the exact name and click on `Start Capture` button.
+## Via ESP8266 Flasher
+1. Download the NodeMCU ESP8266 Flasher from [here](https://github.com/nodemcu/nodemcu-flasher) according to your operating system.
+2. Download the `.bin` file from [here](https://github.com/wirebits/WifiSnare/releases/download/v1.0/WifiSnare.bin).
+3. Open NodeMCU ESP8266 Flasher.
+4. Click on `Advanced` Tab.
+5. Click on `Restore Default` button.
+6. Click on `Config` Tab.
+   - It show `INTERNAL://NODEMCU`.
+7. Click on ![image](https://github.com/user-attachments/assets/1540d7e8-514a-4e60-a29d-3019699868df) in front of `INTERNAL://NODEMCU`.
+8. Select the `WifiSnare.bin` file.
+9. Click on `Operation` Tab.
+10. Click on `Flash(F)` button.
+12. Wait for sometimes and when completed, press `RST` button.
